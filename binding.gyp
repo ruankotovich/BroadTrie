@@ -10,7 +10,7 @@
         "-fno-exceptions"
       ],
       "sources": [
-        "./src/node.cc"
+        "./src/c++/node.cc"
       ]
     }
   ]

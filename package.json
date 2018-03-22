@@ -1,0 +1,31 @@
+{
+    "name": "teewa-pando",
+    "version": "1.0.0",
+    "description": "C++ Teewa-designed Pando for NodeJS",
+    "main": "index.js",
+    "dependencies": {
+        "restify": "^4.1.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "install": "node-gyp rebuild"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ruankotovich/BroadTrie.git"
+    },
+    "keywords": [
+        "pando",
+        "ingredients",
+        "nodejs",
+        "c++"
+    ],
+    "author": "Xyah Kotovich, Caio Sosnavich",
+    "license": "ISC",
+    "gypfile": true,
+    "bugs": {
+        "url": "https://github.com/ruankotovich/BroadTrie/issues"
+    },
+    "homepage": "link do api doc"
+}

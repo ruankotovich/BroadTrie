@@ -16,14 +16,14 @@
     "force_dynamic_crt": 0,
     "gas_version": "2.23",
     "host_arch": "x64",
-    "icu_data_file": "icudt59l.dat",
-    "icu_data_in": "../../deps/icu-small/source/data/in/icudt59l.dat",
+    "icu_data_file": "icudt60l.dat",
+    "icu_data_in": "../../deps/icu-small/source/data/in/icudt60l.dat",
     "icu_endianness": "l",
     "icu_gyp_path": "tools/icu/icu-generic.gyp",
     "icu_locales": "en,root",
     "icu_path": "deps/icu-small",
     "icu_small": "true",
-    "icu_ver_major": "59",
+    "icu_ver_major": "60",
     "llvm_version": 0,
     "node_byteorder": "little",
     "node_enable_d8": "false",
@@ -65,7 +65,7 @@
     "v8_trace_maps": 0,
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
-    "nodedir": "/home/dmitry/.node-gyp/8.9.4",
+    "nodedir": "/home/caiop/.node-gyp/8.10.0",
     "standalone_static_library": 1
   }
 }

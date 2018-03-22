@@ -36,10 +36,10 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/dmitry/.node-gyp/8.9.4/include/node \
-	-I/home/dmitry/.node-gyp/8.9.4/src \
-	-I/home/dmitry/.node-gyp/8.9.4/deps/uv/include \
-	-I/home/dmitry/.node-gyp/8.9.4/deps/v8/include
+	-I/home/caiop/.node-gyp/8.10.0/include/node \
+	-I/home/caiop/.node-gyp/8.10.0/src \
+	-I/home/caiop/.node-gyp/8.10.0/deps/uv/include \
+	-I/home/caiop/.node-gyp/8.10.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=canonicalTrie' \
@@ -72,13 +72,13 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/dmitry/.node-gyp/8.9.4/include/node \
-	-I/home/dmitry/.node-gyp/8.9.4/src \
-	-I/home/dmitry/.node-gyp/8.9.4/deps/uv/include \
-	-I/home/dmitry/.node-gyp/8.9.4/deps/v8/include
+	-I/home/caiop/.node-gyp/8.10.0/include/node \
+	-I/home/caiop/.node-gyp/8.10.0/src \
+	-I/home/caiop/.node-gyp/8.10.0/deps/uv/include \
+	-I/home/caiop/.node-gyp/8.10.0/deps/v8/include
 
 OBJS := \
-	$(obj).target/$(TARGET)/src/node.o
+	$(obj).target/$(TARGET)/src/c++/node.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)
