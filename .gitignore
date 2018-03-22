@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# NPM generated files #
+######################
+node_modules
