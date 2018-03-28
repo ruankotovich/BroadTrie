@@ -1,11 +1,13 @@
 "use strict";
-var restify = require('restify');
+let restify = require('restify');
+let rp = require('request-promise');
+let { CanonicalTrie } = require("./src/js/pando.js");
 
-var options = {
+let options = {
 	name: "Teewa Pando as a Service"
 };
 
-var server = restify.createServer(options);
+let server = restify.createServer(options);
 
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.authorizationParser());
@@ -17,6 +19,27 @@ server.use(restify.bodyParser({
     mapParams: false
 }));
 
+//carrega a trie
+async function loadIngredients(){
+    
+    let options = {
+        method: "GET",
+        headers:{"Authorization":"945772e0559b097e16640dc6107815c9ee35fa6c"},
+        uri:  "http://localhost:9081/ingredients",
+        json: true // Automatically stringifies the body to JSON
+    };
 
+    let response = await rp(options)
+    if(response.length != 0){
+        for(let ingredient of response){
+            let result = CanonicalTrie.emplace(ingredient.name, ingredient);
+        }
+    }
+}
+
+async function main(){
+    await loadIngredients();
+} 
+main();
 module.exports = server;
 require('./routes');
