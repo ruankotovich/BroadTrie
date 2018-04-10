@@ -1,6 +1,8 @@
 "use strict";
 let restify = require('restify');
 let rp = require('request-promise');
+const URL = require('./process').apps[0].urls.API_SERVER;
+
 let { CanonicalTrie } = require("./src/js/pando.js");
 
 let options = {
@@ -25,7 +27,7 @@ async function loadIngredients(){
     let options = {
         method: "GET",
         headers:{"Authorization":"945772e0559b097e16640dc6107815c9ee35fa6c"},
-        uri:  "http://localhost:9081/ingredients",
+        uri:  URL + "/ingredients",
         json: true // Automatically stringifies the body to JSON
     };
 
