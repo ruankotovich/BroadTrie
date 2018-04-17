@@ -35,7 +35,18 @@ let CanonicalTrie = {
         catch(error){
             return false;
         }
-    }
+    },
+    autocomplete: (key) => {
+        let outputPreprocessed = canonicalTrie.autocomplete(key);
+        console.log("OUTPUT_PROCESSED: ", outputPreprocessed);
+        let result = [];
+        for(let output of outputPreprocessed){
+            result.push(JSON.parse(output));
+        }
+        
+        return result;
+    },
+
 };
 
 module.exports.CanonicalTrie = CanonicalTrie;
