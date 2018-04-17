@@ -9,7 +9,7 @@ if (process.platform === "win32" && process.arch === "x64") {
     // Load the new built binary for other platforms.
     canonicalTrie = require('../../build/Release/canonicalTrie');
 }
-let dirname =  process.cwd();
+let dirname = process.cwd();
 canonicalTrie.buildCharmap(`${dirname}/charmap.cm`);
 console.log("Loading charmap on " + `${dirname}/charmap.cm`);
 
@@ -19,7 +19,7 @@ let CanonicalTrie = {
     search: (key) => {
         let outputPreprocessed = canonicalTrie.search(key);
         if (outputPreprocessed.object) {
-            let bolacha =  outputPreprocessed.object;
+            let bolacha = outputPreprocessed.object;
             console.log(bolacha);
             console.log(JSON.parse(bolacha));
             return JSON.parse(bolacha);
@@ -28,22 +28,21 @@ let CanonicalTrie = {
         }
     },
     emplace: (key, value) => {
-        try{
-            canonicalTrie.emplace(key, typeof(value) === "object" ? JSON.stringify(value) : String(value));
+        try {
+            canonicalTrie.emplace(key, typeof (value) === "object" ? JSON.stringify(value) : String(value));
             return true;
         }
-        catch(error){
+        catch (error) {
             return false;
         }
     },
     autocomplete: (key) => {
         let outputPreprocessed = canonicalTrie.autocomplete(key);
-        console.log("OUTPUT_PROCESSED: ", outputPreprocessed);
         let result = [];
-        for(let output of outputPreprocessed){
+        for (let output of outputPreprocessed) {
             result.push(JSON.parse(output));
         }
-        
+
         return result;
     },
 

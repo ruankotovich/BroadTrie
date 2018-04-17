@@ -36,10 +36,10 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/caiop/.node-gyp/8.10.0/include/node \
-	-I/home/caiop/.node-gyp/8.10.0/src \
-	-I/home/caiop/.node-gyp/8.10.0/deps/uv/include \
-	-I/home/caiop/.node-gyp/8.10.0/deps/v8/include
+	-I/home/dmitry/.node-gyp/8.11.1/include/node \
+	-I/home/dmitry/.node-gyp/8.11.1/src \
+	-I/home/dmitry/.node-gyp/8.11.1/deps/uv/include \
+	-I/home/dmitry/.node-gyp/8.11.1/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=canonicalTrie' \
@@ -72,10 +72,10 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/caiop/.node-gyp/8.10.0/include/node \
-	-I/home/caiop/.node-gyp/8.10.0/src \
-	-I/home/caiop/.node-gyp/8.10.0/deps/uv/include \
-	-I/home/caiop/.node-gyp/8.10.0/deps/v8/include
+	-I/home/dmitry/.node-gyp/8.11.1/include/node \
+	-I/home/dmitry/.node-gyp/8.11.1/src \
+	-I/home/dmitry/.node-gyp/8.11.1/deps/uv/include \
+	-I/home/dmitry/.node-gyp/8.11.1/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/c++/node.o

@@ -99,13 +99,17 @@ public:
 
     void addValue(const T& content)
     {
-        this->m_nodeContent->push_back(content);
+        if (this->m_nodeContent->empty()) {
+            this->m_nodeContent->push_back(content);
+        }
     }
 
     template <typename... Args>
     void emplaceValue(const Args&... args)
     {
-        this->m_nodeContent->emplace_back(args...);
+        if (this->m_nodeContent->empty()) {
+            this->m_nodeContent->emplace_back(args...);
+        }
     }
 
     const std::vector<T>* getValues()

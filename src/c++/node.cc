@@ -107,8 +107,10 @@ void autocomplete(const v8::FunctionCallbackInfo<v8::Value>& args)
         auto&& trieResponse = canonicalTrie.autocomplete(key);
         int count = 0;
 
-        while (trieResponse.empty() && ++count <= 5) {
+        while (!trieResponse.empty() && count < 5) {
             nodes->Set(count, v8::String::NewFromUtf8(isolate, trieResponse.top().content->c_str()));
+            trieResponse.pop();
+            ++count;
         }
 
         args.GetReturnValue().Set(nodes);
