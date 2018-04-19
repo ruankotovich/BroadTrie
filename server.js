@@ -2,6 +2,8 @@
 let restify = require('restify');
 let rp = require('request-promise');
 const URL = require('./process').apps[0].urls.API_SERVER;
+const fs = require("fs");
+const path = require("path");
 
 let { CanonicalTrie } = require("./src/js/pando.js");
 
@@ -22,26 +24,21 @@ server.use(restify.bodyParser({
 }));
 
 //carrega a trie
-// async function loadIngredients(){
+async function loadIngredients(){
+
+    const ingredients = fs.readFileSync(path.join(process.cwd(), "config", "ingredients.txt")).toString().split('\n');
     
-//     let options = {
-//         method: "GET",
-//         headers:{"Authorization":"945772e0559b097e16640dc6107815c9ee35fa6c"},
-//         uri:  URL + "/ingredients",
-//         json: true // Automatically stringifies the body to JSON
-//     };
+    for(let ingredient of ingredients){
+        let obj = {
+            name:ingredient
+        };
+        let result = CanonicalTrie.emplace(ingredient, obj);
+    }
+}
 
-//     let response = await rp(options)
-//     if(response.length != 0){
-//         for(let ingredient of response){
-//             let result = CanonicalTrie.emplace(ingredient.name, ingredient);
-//         }
-//     }
-// }
-
-// async function main(){
-//     await loadIngredients();
-// } 
-// main();
+async function main(){
+    await loadIngredients();
+} 
+main();
 module.exports = server;
 require('./routes');

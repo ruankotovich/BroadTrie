@@ -65,7 +65,7 @@
     "v8_trace_maps": 0,
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
-    "nodedir": "/home/dmitry/.node-gyp/8.11.1",
+    "nodedir": "/home/caiop/.node-gyp/8.10.0",
     "standalone_static_library": 1
   }
 }
